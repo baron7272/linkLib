@@ -81,7 +81,8 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
             if ((0..50).random() == 10 || baseConfig.appRunCount % 100 == 0) {
                 val label = "You are using a fake version of the app. For your own safety download the original one from www.linkLibrary.com. Thanks"
                 ConfirmationDialog(this, label, positive = R.string.ok, negative = 0) {
-                    launchViewIntent("https://play.google.com/store/apps/dev?id=9070296388022589266")
+                    launchViewIntent("https://google")
+                
                 }
             }
         }
@@ -490,11 +491,11 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
     }
 
     fun startCustomizationActivity() {
-        if (!packageName.contains("slootelibomelpmis".reversed(), true)) {
+            if (!packageName.startsWith("com.linkLibrary.", true)) {
             if (baseConfig.appRunCount > 100) {
                 val label = "You are using a fake version of the app. For your own safety download the original one from www.linkLibrary.com. Thanks"
                 ConfirmationDialog(this, label, positive = R.string.ok, negative = 0) {
-                    launchViewIntent("https://play.google.com/store/apps/dev?id=9070296388022589266")
+                    launchViewIntent("https://google")
                 }
                 return
             }
